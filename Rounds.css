@@ -1,0 +1,70 @@
+body {
+    background-image: url('https://cdn.wallpapersafari.com/94/44/lyMNAf.png');
+    height: 70vh;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+header{
+    font-family: "Raleway", sans-serif;
+    background-color: #03045E;
+    color:white;
+    text-align: center;
+}
+h3{
+    font-family: "Raleway", sans-serif;
+    color:#03045E;
+    justify-content: center;
+    margin: 5px;
+    font-weight: 100;
+    padding-left: 60px;
+}
+p{
+    font-family: "Raleway", sans-serif;
+    color:#03045E;  
+}
+input{
+    background-color: white;
+    border-radius: 4px;
+    padding: 6px 6px;
+    color:#03045E;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+
+    
+}
+.pad{
+    padding: 10px 18px;
+    margin-top: 150px;
+}
+
+
+button{
+    background-color: #03045E;
+    border-radius: 4px;
+    padding: 8px 18px;
+    margin: 8px 0;
+    color:white;
+    border: none;
+}
+div{
+    margin:5px;
+    justify-content: center;
+}
+p{
+    color:#03045E;
+    font-size: 30px;
+}
+h2{
+    font-family: "Raleway", sans-serif;
+    color:#03045E;
+    text-align: center;  
+}
+
+h1{
+    font-family: "Raleway", sans-serif;
+    color:white;
+    text-align: center;
+}
