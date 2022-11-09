@@ -294,10 +294,8 @@
          <input style="margin-bottom:5px" type="text" name="0hMatrix14" maxlength="2" size="2">
          <input style="margin-bottom:5px" type="text" name="0hMatrix15" maxlength="2" size="2"><br />
          <br />
-         <button onclick="populateMatrix()">Populate the Matrix</button>
-         <br/>
-         <br/>
-         <button onclick="expandKey()">Perform Key Expansion</button>
+         <button onclick="populateMatrix() ; expandKey()">Populate the Matrix</button>
+         
          
     </div>
 
@@ -324,10 +322,7 @@
          <input style="margin-bottom:5px" type="text" name="0kMatrix14" maxlength="2" size="2">
          <input style="margin-bottom:5px" type="text" name="0kMatrix15" maxlength="2" size="2"><br />
          <br/>
-         <button onclick="addRoundKey(0)">Add Round Key</button>
-         <br />
-         <br/>
-         <button onclick="restOfSteps('addRoundKey',0)">Complete Encryption</button> 
+         <button onclick="addRoundKey(0)">Add Round Key</button>        
     </div>
 
     <div>
@@ -353,6 +348,7 @@
          <input style="margin-bottom:5px" type="text" name="0aMatrix14" maxlength="2" size="2">
          <input style="margin-bottom:5px" type="text" name="0aMatrix15" maxlength="2" size="2"><br />
          <br/>
+	 <button onclick="restOfSteps('addRoundKey',0)">Complete Encryption</button> 
           
     </div>
     </div>
