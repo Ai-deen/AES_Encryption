@@ -1,0 +1,141 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="AES.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<title>AES - Advanced Encryption Standard</title>
+<script>
+
+function save() {
+        hByte0 = document.getElementById('hByte0').value;
+        hByte1 = document.getElementById('hByte1').value;
+        hByte2 = document.getElementById('hByte2').value;
+        hByte3 = document.getElementById('hByte3').value;
+        hByte4 = document.getElementById('hByte4').value;
+        hByte5 = document.getElementById('hByte5').value;
+        hByte6 = document.getElementById('hByte6').value;
+        hByte7 = document.getElementById('hByte7').value;
+        hByte8 = document.getElementById('hByte8').value;
+        hByte9 = document.getElementById('hByte9').value;
+        hByte10 = document.getElementById('hByte10').value;
+        hByte11 = document.getElementById('hByte11').value;
+        hByte12 = document.getElementById('hByte12').value;
+        hByte13 = document.getElementById('hByte13').value;
+        hByte14 = document.getElementById('hByte14').value;
+        hByte15 = document.getElementById('hByte15').value;
+        localStorage.setItem('hByte0', hByte0);
+        localStorage.setItem('hByte1', hByte1);
+        localStorage.setItem('hByte2', hByte2);
+        localStorage.setItem('hByte3', hByte3);
+        localStorage.setItem('hByte4', hByte4);
+        localStorage.setItem('hByte5', hByte5);
+        localStorage.setItem('hByte6', hByte6);
+        localStorage.setItem('hByte7', hByte7);
+        localStorage.setItem('hByte8', hByte8);
+        localStorage.setItem('hByte9', hByte9);
+        localStorage.setItem('hByte10', hByte10);
+        localStorage.setItem('hByte11', hByte11);
+        localStorage.setItem('hByte12', hByte12);
+        localStorage.setItem('hByte13', hByte13);
+        localStorage.setItem('hByte14', hByte14);
+        localStorage.setItem('hByte15', hByte15);
+	
+		kByte0 = document.getElementById('kByte0').value;
+        kByte1 = document.getElementById('kByte1').value;
+        kByte2 = document.getElementById('kByte2').value;
+        kByte3 = document.getElementById('kByte3').value;
+        kByte4 = document.getElementById('kByte4').value;
+        kByte5 = document.getElementById('kByte5').value;
+        kByte6 = document.getElementById('kByte6').value;
+        kByte7 = document.getElementById('kByte7').value;
+        kByte8 = document.getElementById('kByte8').value;
+        kByte9 = document.getElementById('kByte9').value;
+        kByte10 = document.getElementById('kByte10').value;
+        kByte11 = document.getElementById('kByte11').value;
+        kByte12 = document.getElementById('kByte12').value;
+        kByte13 = document.getElementById('kByte13').value;
+        kByte14 = document.getElementById('kByte14').value;
+        kByte15 = document.getElementById('kByte15').value;
+        localStorage.setItem('kByte0', kByte0);
+        localStorage.setItem('kByte1', kByte1);
+        localStorage.setItem('kByte2', kByte2);
+        localStorage.setItem('kByte3', kByte3);
+        localStorage.setItem('kByte4', kByte4);
+        localStorage.setItem('kByte5', kByte5);
+        localStorage.setItem('kByte6', kByte6);
+        localStorage.setItem('kByte7', kByte7);
+        localStorage.setItem('kByte8', kByte8);
+        localStorage.setItem('kByte9', kByte9);
+        localStorage.setItem('kByte10', kByte10);
+        localStorage.setItem('kByte11', kByte11);
+        localStorage.setItem('kByte12', kByte12);
+        localStorage.setItem('kByte13', kByte13);
+        localStorage.setItem('kByte14', kByte14);
+        localStorage.setItem('kByte15', kByte15);
+	}
+
+</script>
+</head>
+<body>
+
+
+<div>
+
+<div class="pad d-flex justify-content-center">
+<h1 style="font-size:4vw">AES ENCRYPTION</h1>
+</div>
+
+<div class="d-flex flex-row  justify-content-center">
+<div class="plain">
+<p class="Common">Plaintext (in hex): <br />
+	<input style="margin-bottom:5px" type="text" name="hByte0" maxlength="2" size="2"  id ="hByte0">
+	<input style="margin-bottom:5px" type="text" name="hByte1" maxlength="2" size="2"  id ="hByte1" >
+	<input style="margin-bottom:5px" type="text" name="hByte2" maxlength="2" size="2"  id ="hByte2">
+	<input style="margin-bottom:5px" type="text" name="hByte3" maxlength="2" size="2"  id ="hByte3"><br />
+	<input style="margin-bottom:5px" type="text" name="hByte4" maxlength="2" size="2"  id ="hByte4">
+	<input style="margin-bottom:5px" type="text" name="hByte5" maxlength="2" size="2"  id ="hByte5">
+	<input style="margin-bottom:5px" type="text" name="hByte6" maxlength="2" size="2"  id ="hByte6">
+	<input style="margin-bottom:5px" type="text" name="hByte7" maxlength="2" size="2"  id ="hByte7"><br />
+	<input style="margin-bottom:5px" type="text" name="hByte8" maxlength="2" size="2"  id ="hByte8">
+	<input style="margin-bottom:5px" type="text" name="hByte9" maxlength="2" size="2"  id ="hByte9">
+	<input style="margin-bottom:5px" type="text" name="hByte10" maxlength="2" size="2"  id ="hByte10">
+	<input style="margin-bottom:5px" type="text" name="hByte11" maxlength="2" size="2"  id ="hByte11"><br />
+	<input style="margin-bottom:5px" type="text" name="hByte12" maxlength="2" size="2"  id ="hByte12">
+	<input style="margin-bottom:5px" type="text" name="hByte13" maxlength="2" size="2"  id ="hByte13">
+	<input style="margin-bottom:5px" type="text" name="hByte14" maxlength="2" size="2"  id ="hByte14">
+	<input style="margin-bottom:5px" type="text" name="hByte15" maxlength="2" size="2"  id ="hByte15">
+</p>
+</div>
+
+<div class="encryp">
+<p class="Common">Encryption key (in hex): <br />
+	<input style="margin-bottom:5px" type="text" name="kByte0" maxlength="2" size="2" id="kByte0">
+	<input style="margin-bottom:5px" type="text" name="kByte1" maxlength="2" size="2" id="kByte1">
+	<input style="margin-bottom:5px" type="text" name="kByte2" maxlength="2" size="2" id="kByte2">
+	<input style="margin-bottom:5px" type="text" name="kByte3" maxlength="2" size="2" id="kByte3"><br />
+	<input style="margin-bottom:5px" type="text" name="kByte4" maxlength="2" size="2" id="kByte4">
+	<input style="margin-bottom:5px" type="text" name="kByte5" maxlength="2" size="2" id="kByte5">
+	<input style="margin-bottom:5px" type="text" name="kByte6" maxlength="2" size="2" id="kByte6">
+	<input style="margin-bottom:5px" type="text" name="kByte7" maxlength="2" size="2" id="kByte7"><br />
+	<input style="margin-bottom:5px" type="text" name="kByte8" maxlength="2" size="2" id="kByte8">
+	<input style="margin-bottom:5px" type="text" name="kByte9" maxlength="2" size="2" id="kByte9">
+	<input style="margin-bottom:5px" type="text" name="kByte10" maxlength="2" size="2" id="kByte10">
+	<input style="margin-bottom:5px" type="text" name="kByte11" maxlength="2" size="2" id="kByte11"><br />
+	<input style="margin-bottom:5px" type="text" name="kByte12" maxlength="2" size="2" id="kByte12">
+	<input style="margin-bottom:5px" type="text" name="kByte13" maxlength="2" size="2" id="kByte13">
+	<input style="margin-bottom:5px" type="text" name="kByte14" maxlength="2" size="2" id="kByte14">
+	<input style="margin-bottom:5px" type="text" name="kByte15" maxlength="2" size="2" id="kByte15">
+    </p>
+</div>
+</div>
+<div class="text-center d-flex flex-row justify-content-center">
+    <button style="margin-right:20px" onclick="location.href='Rounds.html' ; save()">Round-wise Encryption</button>
+    <!--<button onclick="location.href='Final.html' ; save()">Complete Encryption</button>-->
+</div>
+</div>
+</body>
+</html>
+

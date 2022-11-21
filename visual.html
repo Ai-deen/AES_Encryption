@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="visual.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</script>
+<script type="text/javascript">
+		
+    var opacity =0;
+    var intervalID=0;
+    function fadeOut()
+    {
+        intervalID=setInterval(hide,50);
+    }
+    function fadeIn()
+    {
+        intervalID=setInterval(show,50);
+    }
+    function show()
+    {
+        var img = document.getElementById("img1");
+        opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+        if(opacity<1)
+        {
+            opacity=opacity+0.1;
+            img.style.opacity=opacity;
+            console.log(opacity);
+        }
+        else
+        {
+            clearInterval(intervalID);
+        }
+    }
+    function hide()
+    {
+        var img = document.getElementById("img1");
+        opacity = Number(window.getComputedStyle(img).getPropertyValue("opacity"));
+        if(opacity>0)
+        {
+            opacity=opacity-0.1;
+            img.style.opacity=opacity;
+            console.log(opacity);
+        }
+        else
+        {
+            clearInterval(intervalID);
+        }
+    }
+
+var dir='right';
+
+function reset1(){
+clearTimeout(my_time);
+document.getElementById('i1').style.left= "500px";
+document.getElementById('i1').style.top= "100px";
+document.getElementById("msg").innerHTML="";
+}
+
+function disp(){
+var step=5; // Change this step value
+//alert(dir);
+
+var y=document.getElementById('i1').offsetTop;
+var x=document.getElementById('i1').offsetLeft;
+if(x >= 1000 ){
+dir = 'left';
+}
+if(x <= 500 ){
+dir = 'right';
+}
+
+if(dir=='right'){x= x +step;}
+else{x=x - step;}
+document.getElementById('i1').style.left= x + "px"; // horizontal  movment
+//////////////////////
+}
+function timer(){
+disp();
+var y=document.getElementById('i1').offsetTop;
+var x=document.getElementById('i1').offsetLeft;
+document.getElementById("msg").innerHTML="X: " + x  + " Y : " + y
+my_time=setTimeout('timer()',10);
+}
+var i = 0;
+var txt = 'HOW DOES AES WORK?'; /* The text */
+var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  }
+}
+    </script>
+
+        <title>AES Visualizer</title>
+     </head>
+<body>
+    <br>
+    <div class="con">
+        <h1 style="font-size:4vw" class="anim-typewriter line-1">AES VISUALIZER </h1>
+    </div>
+    <div class="pk">
+    <p>The AES Encryption algorithm (also known as the Rijndael algorithm) is a symmetric block cipher algorithm with a block/chunk size of 128 bits. <br>
+        It converts these individual blocks using key of 128 bits. Once it encrypts these blocks, it joins them together to form the ciphertext.</p>
+    </div>
+    <br>
+    <div class="pk">
+    <p>To understand the way AES works, you first need to learn how it transmits information between multiple steps. <br>
+    Since a single block is 16 bytes, a 4x4 matrix holds the data in a single block, 
+    with each cell holding a single byte of information.</p>
+    </div>
+    <div class="container">
+    <div class="rows">
+    <div class="d-flex flex-column">
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DATA</h2>
+        <div class="d-flex flex-row">
+        <div class="box">D</div>
+        <div class="box">A</div>
+        <div class="box">T</div>
+        <div class="box">A</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">D</div>
+        <div class="box">A</div>
+        <div class="box">T</div>
+        <div class="box">A</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">D</div>
+        <div class="box">A</div>
+        <div class="box">T</div>
+        <div class="box">A</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">D</div>
+        <div class="box">A</div>
+        <div class="box">T</div>
+        <div class="box">A</div>
+        </div>
+        </div>
+        <div class="b"></div>
+    <div class="d-flex flex-column">
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KEY</h2>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">S</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">S</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">S</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">S</div>
+        </div>
+        </div>
+    </div>
+    <br/><br/>
+</div>
+
+<div class="con">
+    <h3>Let us see what happens in the AES Rounds... </h3>
+</div>
+
+<div class="cont">
+    <h1 class="level-1 rectangle">AES ENCRYPTION STEPS</h1>
+    <ol class="level-2-wrapper">
+      <li>
+        <h2 class="level-2 rectangle">KEYS</h2>
+        <ol class="level-1-wrapper">
+          <li>
+  
+            <h3 class="level-3 rectangle">10 ROUND KEYS</h3>
+          </li>
+        </ol>
+      </li>
+      <li>
+        <h2 class="level-2 rectangle">HEXADECIMAL TEXT</h2>
+        <ol class="level-1-wrapper">
+          <li>
+            <h3 class="level-2 rectangle">Add Round Key (k0)</h3>
+              <li>
+                <h4 class="level-3 rectangle">Individual Rounds</h4>
+              </li>
+          <ol class="level-4-wrapper">
+              <li>
+                <h4 class="level-4 rectangle">Sub Bytes</h4>
+              </li>
+              <li>
+                <h4 class="level-4 rectangle">Shift Rows</h4>
+              </li>
+              <li>
+                <h4 class="level-4 rectangle">Mix Columns</h4>
+              </li>
+              <li>
+                <h4 class="level-4 rectangle">Add round Key (k1 to k10)</h4>
+              </li>
+            </ol>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </div>
+
+  <br/><br/>
+
+<div class="con">
+    <h1>STEPS IN AES ROUNDS</h1>
+</div>
+<br>
+<div class="pk">
+    <h3>SUB BYTES</h3>
+    </div>
+<div class="pk">    
+    <p> The hexadecimal text is mapped with a substitution box (S-Box) to generate new values i.e, creating confusion.
+    </p></div>
+<div class="container">
+    <div class="rows">
+        <div id="img1" class="rows">
+     <div class="d-flex flex-column" >
+        <div class="d-flex flex-row" >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">9</div>
+        <div class="box">0</div>
+        <div class="box">a</div>
+        <div class="box">b</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+        <div class="box">f</div>
+        </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&plus;</h1>
+          </div>
+        <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="d-flex flex-row">
+            <div class="box">S</div>
+            <div class="box">B</div>
+            <div class="box">O</div>
+            <div class="box">X</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">S</div>
+            <div class="box">B</div>
+            <div class="box">O</div>
+            <div class="box">X</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">S</div>
+            <div class="box">B</div>
+            <div class="box">O</div>
+            <div class="box">X</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">S</div>
+            <div class="box">B</div>
+            <div class="box">O</div>
+            <div class="box">X</div>
+            </div>
+            </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&#8594;</h1>
+          </div>
+          <div class="a"></div>
+            <div class="d-flex flex-column">
+            <div class="d-flex flex-row">
+            <div class="box">98</div>
+            <div class="box">24</div>
+            <div class="box">a8</div>
+            <div class="box">b2</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">9d</div>
+            <div class="box">e0</div>
+            <div class="box">32</div>
+            <div class="box">81</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">80</div>
+            <div class="box">2e</div>
+            <div class="box">9c</div>
+            <div class="box">e0</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">fa</div>
+            <div class="box">8c</div>
+            <div class="box">20</div>
+            <div class="box">86</div>
+            </div>
+            </div>
+
+        </div>
+        </div>
+        <br><br>
+    <div class="pk">
+        <h3>SHIFT ROWS</h3>
+        </div>
+    <div class="pk">    
+        <p>  It swaps the row elements among each other. It skips the first row. 
+            It shifts the elements in the second row, one position to the left.<br> 
+            It also shifts the elements from the third row two consecutive positions to the left,
+                and it shifts the last row three positions to the left.
+        </p></div>
+<div class="container">
+    <div class="rows">
+    <div class="d-flex flex-column">
+        <div class="pk"><h2>Before</h2></div>
+        <div class="d-flex flex-row">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">9</div>
+        <div class="box">0</div>
+        <div class="box">a</div>
+        <div class="box">b</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+        <div class="box">f</div>
+        </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br><br><br>
+            <h1>&#8594;</h1>
+            </div>
+            <div class="a"></div>
+    <div class="d-flex flex-column">
+        <div class="pk"><h2>After</h2></div>
+        <div class="d-flex flex-row">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">5</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">a</div>
+        <div class="box">b</div>
+        <div class="box">9</div>
+        <div class="box">0</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">f</div>
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+        </div>
+        </div>
+    </div>
+    </div>
+    <br><br>
+    <div class="pk">
+        <h3>MIX COLUMNS</h3>
+        </div>
+    <div class="pk">    
+        <p>   It multiplies a constant matrix with each column in the state array 
+            to get a new column for the subsequent state array.<br> 
+            Once all the columns are multiplied with the same constant matrix,
+            you get your state array for the next step. <br>
+            This particular step is not to be done in the last round.
+        </p></div>
+<div class="container">
+    <div class="rows">
+        <div id="img1" class="rows">
+        <div class="d-flex flex-column" >
+        <div class="d-flex flex-row" >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">9</div>
+        <div class="box">0</div>
+        <div class="box">a</div>
+        <div class="box">b</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+        <div class="box">f</div>
+        </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&times;</h1>
+            </div>
+    <div class="a"></div>
+    <div class="d-flex flex-column" >
+        <div class="d-flex flex-row">
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">1</div>
+        <div class="box">1</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">1</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">1</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">3</div>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">2</div>
+        </div>
+        </div>
+    </div>
+    <div class="a"></div>
+    <div>
+        <br/><br/><br/><br>
+        <h1>&#8594;</h1>
+        </div>
+        <div class="a"></div>
+        <div class="d-flex flex-column">
+        <div class="d-flex flex-row">
+        <div class="box">97</div>
+        <div class="box">fa</div>
+        <div class="box">3b</div>
+        <div class="box">d0</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">8a</div>
+        <div class="box">6b</div>
+        <div class="box">ca</div>
+        <div class="box">eb</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">18</div>
+        <div class="box">9f</div>
+        <div class="box">e1</div>
+        <div class="box">84</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">90</div>
+        <div class="box">4b</div>
+        <div class="box">74</div>
+        <div class="box">36</div>
+        </div>
+        </div>
+
+        </div>
+        </div>
+        <br><br>
+        <div class="pk">
+            <h3>ADD ROUND KEY</h3>
+            </div>
+        <div class="pk">    
+            <p>The respective key for the round is XOR’d with the state array is obtained in the previous step.<br>
+                If this is the last round, the resultant state array becomes the ciphertext for the specific block; <br>
+                else, it passes as the new state array input for the next round.
+            </p></div>
+<div class="container">
+    <div class="rows">
+        <div id="img1" class="rows">
+        <div class="d-flex flex-column" >
+        <div class="d-flex flex-row" >
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">9</div>
+        <div class="box">0</div>
+        <div class="box">a</div>
+        <div class="box">b</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">c</div>
+        <div class="box">d</div>
+        <div class="box">e</div>
+        <div class="box">f</div>
+        </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&CirclePlus;</h1>
+            </div>
+    <div class="a"></div>
+    <div class="d-flex flex-column" >
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">n</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">n</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">n</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">K</div>
+        <div class="box">E</div>
+        <div class="box">Y</div>
+        <div class="box">n</div>
+        </div>
+        </div>
+    </div>
+    <div class="a"></div>
+    <div>
+        <br/><br/><br/><br>
+        <h1>&#8594;</h1>
+        </div>
+        <div class="a"></div>
+        <div class="d-flex flex-column">
+        <div class="d-flex flex-row">
+        <div class="box">32</div>
+        <div class="box">28</div>
+        <div class="box">56</div>
+        <div class="box">10</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">ae</div>
+        <div class="box">b9</div>
+        <div class="box">2f</div>
+        <div class="box">9a</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">42</div>
+        <div class="box">54</div>
+        <div class="box">bb</div>
+        <div class="box">ad</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">38</div>
+        <div class="box">64</div>
+        <div class="box">52</div>
+        <div class="box">05</div>
+        </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="con">
+    <h3>All of this is fine...but what about the Round keys? How are they made?</h3>
+    </div>
+    <div class="pk"> 
+     <p> In AES algorithm the key is expanded into 10 keys successively by an operation called key schedule round.
+        </p></div><br>
+    <div class="pk">
+        <h3>KEY EXPANSION</h3>
+        </div>
+    <div class="pk">    
+        <p>We take the last column of the previous round key and move the top byte to the bottom.
+        </p></div>
+<div class="container">
+    <div class="rows">
+        <div id="img1" class="rows">
+        <div class="d-flex flex-column" >
+        <div class="d-flex flex-row" >
+        <div class="box">S</div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        <div class="box"> </div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">O</div>
+        <div class="box">1</div>
+        <div class="box">b</div>
+        <div class="box">k</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">M</div>
+        <div class="box">2</div>
+        <div class="box">i</div>
+        <div class="box">e</div>
+        </div>
+        <div class="d-flex flex-row">
+        <div class="box">E</div>
+        <div class="box">8</div>
+        <div class="box">t</div>
+        <div class="box">y</div>
+        </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&#8658;</h1>
+            </div>
+    <div class="a"></div>
+    <div class="d-flex flex-column" >
+        <div class="box"> </div>
+        <div class="box">k</div>
+        <div class="box">e</div>
+        <div class="box">y</div>
+    </div>
+    <div class="a"></div>
+    <div>
+        <br/><br/><br/><br>
+        <h1>&#8594;</h1>
+        </div>
+        <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="box">k</div>
+            <div class="box">e</div>
+            <div class="box">y</div>
+            <div class="box"> </div>
+        </div>
+    </div></div><br>
+    <div class="pk">    
+        <p>Then, we pass each byte through an SBOX to create confusion
+        </p></div>
+<div class="container">
+    <div class="rows">
+        <div class="d-flex flex-column" >
+            <div class="box">k</div>
+            <div class="box">e</div>
+            <div class="box">y</div>
+            <div class="box"> </div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            </div>
+            <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="box">S</div>
+            <div class="box">B</div>
+            <div class="box">O</div>
+            <div class="box">X</div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            <h1>&#8658;</h1>
+            </div>
+            <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="box">1b</div>
+            <div class="box">ae</div>
+            <div class="box">5c</div>
+            <div class="box">9f</div>
+        </div>
+        </div></div>
+
+<div class="pk">    
+    <p>Then,we XOR the column with a specific round constant different for each round
+    </p></div>
+<div class="container">
+<div class="rows">
+    <div class="d-flex flex-column" >
+        <div class="box">1b</div>
+        <div class="box">ae</div>
+        <div class="box">5c</div>
+        <div class="box">9f</div>
+    </div>
+    <div class="a"></div>
+    <div>
+        <br/><br/><br/><br>
+        <h1>&CirclePlus;</h1>
+        </div>
+<div class="a"></div>
+    <div class="d-flex flex-column" >
+        <div class="box">1</div>
+        <div class="box">0</div>
+        <div class="box">0</div>
+        <div class="box">0</div>
+    </div>
+    <div class="a"></div>
+    <div>
+        <br/><br/><br/><br>
+        <h1>&#8594;</h1>
+        </div>
+        <div class="a"></div>
+    <div class="d-flex flex-column" >
+        <div class="box">1a</div>
+        <div class="box">ae</div>
+        <div class="box">5c</div>
+        <div class="box">9f</div>
+    </div>
+    </div></div><br>
+    <div class="pk">    
+        <p>We XOR it with the first column of the previous round to get the first column of the key of this round.
+        </p></div>  
+<div class="container">
+    <div class="rows">
+        <div class="d-flex flex-column" >
+            <div class="box">S</div>
+            <div class="box">O</div>
+            <div class="box">M</div>
+            <div class="box">E</div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&CirclePlus;</h1>
+            </div>
+    <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="box">1a</div>
+            <div class="box">ae</div>
+            <div class="box">5c</div>
+            <div class="box">9f</div>
+        </div>
+        <div class="a"></div>
+        <div>
+            <br/><br/><br/><br>
+            <h1>&#8594;</h1>
+            </div>
+            <div class="a"></div>
+        <div class="d-flex flex-column" >
+            <div class="box">81</div>
+            <div class="box">ef</div>
+            <div class="box">1a</div>
+            <div class="box">52</div>
+        </div>
+        </div></div><br>     
+<div class="pk">    
+    <p>We XOR the previous column with the same column of the previous round key
+    </p></div>     
+    <div class="container">
+        <div class="rows">
+            <div class="d-flex flex-column" >
+                <div class="box"> </div>
+                <div class="box">1</div>
+                <div class="box">2</div>
+                <div class="box">8</div>
+            </div>
+            <div class="a"></div>
+            <div>
+                <br/><br/><br/><br>
+                <h1>&CirclePlus;</h1>
+                </div>
+        <div class="a"></div>
+            <div class="d-flex flex-column" >
+                <div class="box">81</div>
+                <div class="box">ef</div>
+                <div class="box">1a</div>
+                <div class="box">52</div>
+            </div>
+            <div class="a"></div>
+            <div>
+                <br/><br/><br/><br>
+                <h1>&#8594;</h1>
+                </div>
+                <div class="a"></div>
+            <div class="d-flex flex-column" >
+                <div class="box">87</div>
+                <div class="box">43</div>
+                <div class="box">e0</div>
+                <div class="box">8a</div>
+            </div>
+            <div class="a"></div>
+            <div>
+                <br/><br/><br/><br>
+                <h1>&#8658;</h1>
+                </div>
+        <div class="a"></div>
+        <div class="d-flex flex-column">
+            <div class="d-flex flex-row">
+            <div class="box">86</div>
+            <div class="box">32</div>
+            <div class="box">e5</div>
+            <div class="box">0a</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">81</div>
+            <div class="box">b6</div>
+            <div class="box">ff</div>
+            <div class="box">c9</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">8e</div>
+            <div class="box">5d</div>
+            <div class="box">a1</div>
+            <div class="box">32</div>
+            </div>
+            <div class="d-flex flex-row">
+            <div class="box">21</div>
+            <div class="box">98</div>
+            <div class="box">b2</div>
+            <div class="box">5e</div>
+            </div>
+        </div></div><br>
+        <div class="pk">    
+            <p>Voila! We are done with the explanation for how AES works.
+            </p></div>  
+            <div class="pk">    
+                <p>You can explore the AES encryption to see how AES works in real life.<br>
+                    Give your own input and key and see how the magic works with your own eyes!!
+                </p></div>  
+                <div class="text-center d-flex flex-row justify-content-center">
+                    <button style="margin-right:20px" onclick="location.href='AES_home.html'">AES-128 Encryption</button>
+                    <!--<button onclick="location.href='Final.html' ; save()">Complete Encryption</button>-->
+                </div>
+<!--<button onclick="fadeIn()" id="btnStop">Fade In</button> <br/><br/>-->
+    <!--<button onclick="fadeOut() , typeWriter()" id="btnAdd">Fade Out</button>-->
+</body>
+</html>
