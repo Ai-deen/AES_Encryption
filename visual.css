@@ -65,6 +65,21 @@ background-attachment: fixed;
     justify-content: center;
 }
 
+.box1{
+  width: 50px;
+  height: 50px;
+  background:transparent;
+  margin: 5px;
+  border-radius: 2px;
+  transition: 1s;
+  text-align: center;
+  padding-left:10px;
+  padding-right:10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 div{
     font-family: "Raleway", sans-serif;
 color:#000957;
